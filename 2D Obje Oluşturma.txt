@@ -1,0 +1,173 @@
+Bir Cizgi Yapma Komutu:
+
+line(x1, y1, x2, y2)          / line(30, 20, 85, 75);
+line(x1, y1, z1, x2, y2, z2)  / line(85, 20, 15, 85, 75, 0);
+
+x1 : ilk noktanýn x-koordinatý
+y1 : ilk noktanýn y koordinatý
+x2 : ikinci noktanýn x-koordinatý
+y2 : ikinci noktanýn y koordinatý
+z1 : ilk noktanýn z koordinatý
+z2 : ikinci noktanýn z koordinatý
+
+
+Bir Kare/Dikdörtgen Yapma Komutu:
+
+rect(a, b, c, d)                 / rect(30, 20, 55, 55);
+rect(a, b, c, d, r)              / rect(30, 20, 55, 55, 7);
+rect(a, b, c, d, tl, tr, br, bl) / rect(30, 20, 55, 55, 3, 6, 12, 18);
+
+a : Dikdörtgenin x koordinatý 
+b : Dikdörtgenin y-koordinatý 
+c : Dikdörtgenin geniþliði 
+d : Dikdörtgenin yüksekliði
+r : Dört köþenin tamamý için yarýçap
+
+tl : Sol üst köþede yarýçap
+tr : Sað üst köþede yarýçap
+br : Sað alt köþede yarýçap
+bl : Sol alt köþe için yarýçap
+
+Bir Yay Yapma Komutu:
+
+arc(a, b, c, d, start, stop)
+arc(a, b, c, d, start, stop, mode)
+
+a: arkýn elipsinin x-koordinatý
+b: arkýn elipsinin y koordinatý
+c: varsayýlan olarak ark elipsinin geniþliði
+d: varsayýlan olarak ark elipsinin yüksekliði
+start: radyanlarda belirtilen ark baþlatmak için açý
+stop:  radyanlarda belirtilen arký durdurmak için açý
+
+
+Bir Elips Yapma Komutu:
+
+ellipse(a, b, c, d) / ellipse(56, 46, 55, 55);
+
+a : elipsin x koordinatý
+b : elipsin y koordinatý
+c : elipsin geniþliði
+d : elipsin yüksekliði
+
+
+Bir Nokta Yapma Komutu:
+
+point(x, y)     / point(30, 20);
+point(x, y, z)  / point(30, 20, -50);
+
+x : noktanýn x koordinatý
+y : noktanýn y koordinatý
+z : Noktanýn z koordinatý
+
+
+Bir Yamuk Yapma Komutu:
+
+	
+quad(x1, y1, x2, y2, x3, y3, x4, y4)  / quad(38, 31, 86, 20, 69, 63, 30, 76);
+
+x1 : ilk köþenin x koordinatý
+y1 : ilk köþenin y koordinatý
+x2 : ikinci köþenin x koordinatý
+y2 : ikinci köþenin y koordinatý
+x3 : üçüncü köþenin x koordinatý
+y3 : üçüncü köþenin y koordinatý
+x4 : dördüncü köþenin x koordinatý
+y4 : dördüncü köþenin y koordinatý
+
+Bir Üçgen Yapma Komutu:
+
+triangle(x1, y1, x2, y2, x3, y3) / triangle(30, 75, 58, 20, 86, 75);
+
+x1: ilk noktanýn x koordinatý
+y1: ilk noktanýn y koordinatý
+x2: ikinci noktanýn x koordinatý
+y2: ikinci noktanýn y koordinatý
+x3: üçüncü noktanýn x koordinatý
+y3: üçüncü noktanýn y koordinatý
+
+
+Birleþen Noktalar Oluþturma
+
+beginShape(POINTS);
+vertex(30, 20);
+vertex(85, 20);
+vertex(85, 75);
+vertex(30, 75);
+endShape();
+
+Tüm þekiller bir dizi köþe birleþtirilerek oluþturulur. vertex (), noktalar, çizgiler, üçgenler, dörtlüler ve çokgenler için köþe koordinatlarýný belirtmek için kullanýlýr. 
+Sadece beginShape () ve endShape () iþlevlerinde kullanýlýr.
+
+Bir parametrenin z parametresi kullanýlarak 3B'de çizilmesi, yukarýdaki örnekte gösterildiði gibi, boyut ile birlikte P3D parametresini gerektirir.
+
+Bu iþlev ayrýca bir dokuyu geometri üzerine eþlemek için kullanýlýr.
+Texture () iþlevi geometriye uygulanacak dokuyu bildirir ve bu dokümanýn forma eþlenmesini tanýmlayan u ve v koordinatlarý ayarlanýr.
+Varsayýlan olarak, u ve v için kullanýlan koordinatlar, görüntünün boyutuna göre piksel cinsinden belirtilir, ancak bu iliþki textureMode () ile deðiþtirilebilir.
+
+
+	
+vertex(x, y)
+vertex(x, y, z)
+vertex(v)
+vertex(x, y, u, v)
+vertex(x, y, z, u, v)
+
+
+v: bir süzgeç dizisi olarak vertex parametreleri
+x: vertex'in x koordinatý
+y: verteksin y koordinatý
+z: verteksin z koordinatý
+u: doku haritalamasý için yatay koordinat
+v: doku eþlemesi için dikey koordinat
+
+
+Noktalarý Hizaya Sokma
+
+
+beginShape();
+vertex(30, 20);
+vertex(85, 20);
+vertex(85, 75);
+vertex(30, 75);
+endShape(CLOSE);
+
+BeginShape () ve endShape () iþlevlerini kullanmak, daha karmaþýk formlar oluþturmanýza olanak tanýr.
+ beginShape () bir þekil için köþe kaydetmeye baþlar ve endShape () kaydý durdurur. Tür parametresinin deðeri, saðlanan köþe noktalarýndan hangi tür þekiller oluþturulacaðýný söyler. 
+Hiçbir mod belirtilmemiþse, þekil herhangi bir düzensiz çokgen olabilir. 
+BeginShape () için kullanýlabilen parametreler POINTS, LINES, TRIANGLE_, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS ve QUAD_STRIP. 
+BeginShape () iþlevini çaðýrdýktan sonra, bir dizi vertex () komutu uygulanmalýdýr. Þekli çizmeyi durdurmak için endShape () öðesini çaðýrýn.
+ Ýki parametreli vertex () iþlevi, 2B'de bir konumu belirtir ve üç parametreyle vertex () iþlevi, 3B'deki bir konumu belirtir.
+ Her þekil mevcut kontur rengiyle özetlenecek ve dolgu rengi ile doldurulacaktýr.
+
+Translate (), rotate () ve scale () gibi dönüþümler beginShape () içinde çalýþmaz. BeginShape () içinde elips () veya rect () gibi baþka þekillerin kullanýlmasý da mümkün deðildir.
+
+P2D ve P3D oluþturucularý, vuruþlu () ve fill () 'nin her bir köþe tabanlý olarak deðiþtirilmesine izin verir, ancak varsayýlan oluþturucu bunu yapmaz. 
+StrokeWeight (), strokeCap ??() ve strokeJoin () gibi ayarlar, herhangi bir oluþturucu ile beginShape () / endShape () bloðu içinde deðiþtirilemez.
+
+Noktalarý Kapama
+
+noFill();
+
+beginShape();
+vertex(20, 20);
+vertex(45, 20);
+vertex(45, 80);
+endShape(CLOSE);
+
+beginShape();
+vertex(50, 20);
+vertex(75, 20);
+vertex(75, 80);
+endShape();
+
+EndShape () iþlevi, beginShape () öðesinin tamamlayýcýsýdýr ve yalnýzca beginShape () öðesinden sonra çaðrýlabilir.
+ Endshape () çaðrýldýðýnda, önceki çaðrýnýn beginShape () çaðrýsýndan itibaren tanýmlanan tüm görüntü verileri, görüntü arabelleðine yazýlýr. 
+Þeklini kapatmak için MODE parametresinin deðeri olarak CLOSE sabiti (baþlangýç ??ve bitiþe baðlanmak için).
+
+	
+
+endShape()
+endShape(mode)
+
+mode: þekli kapatmak için CLOSE kullanýn

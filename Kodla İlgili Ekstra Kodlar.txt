@@ -1,0 +1,26 @@
+Oluþacak Pencerenin Boyunu Ayarlama Komutu:
+
+size(?,?); / size(640,360); 
+
+
+Koda Bir Baþlýk Ekleme 
+
+//_______     /  //Bu Satýr Olmamýþ
+
+
+Kodda Bir Komutu Ýzleme
+
+println() / println(circleX)
+
+Not:Eðer Ýzlediðin Komutu Ýzlerken Ad Vermek Ýstiyorsan
+
+println("tamer" + circleX)
+
+
+Yanlýþ = Not
+
+! harfi Yanlýþ Dýr
+
+
+
+

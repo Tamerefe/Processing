@@ -1,0 +1,29 @@
+Particle [] particles;
+
+PImage pubg;
+
+void setup() {
+  
+  size(694,388);
+  
+  pubg = loadImage("pubg.jpg");
+  
+  particles = new Particle [500];
+  for (int i = 0; i < particles.length; i++){
+  particles[i] = new Particle();
+  }
+   background(0);
+  }
+
+
+void draw() {
+
+  
+  
+  for (int i = 0; i < particles.length; i++)
+  particles[i].display();
+  for (int i = 0; i < particles.length; i++)
+  particles[i].move();
+  
+  
+}

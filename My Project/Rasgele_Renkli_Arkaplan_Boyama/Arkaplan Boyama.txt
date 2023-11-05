@@ -1,0 +1,15 @@
+Top t;
+void setup () {
+  size (480,360);
+  background(255);
+ t = new Top();   
+}
+
+void draw() {
+  t.TopunDurumu();
+  t.TopunHareketi();
+  t.EkranaCarpma();
+}
+
+
+  

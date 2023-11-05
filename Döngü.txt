@@ -1,0 +1,117 @@
+Yapýlan Komutu Döngüye Sokma
+
+int i = 0;
+while (i < 80) {
+  line(30, i, 80, i);
+  i = i + 5;
+} 
+
+
+Bir tekrar dizisini kontrol eder. Ýfade yapýsý, ifade doðru iken sürekli bir dizi ifadeyi yürütür. Ýfade tekrarlar sýrasýnda güncellenmeli ya da program hiçbir zaman "ayrýlmayacak".
+
+Bu iþlev tehlikeli olabilir çünkü while döngüsündeki kod, içerideki ifade yanlýþ hale gelene kadar bitmez. 
+Diðer kodlarýn çalýþmasýný engeller (ör., Fare ve klavye olaylarý güncellenmez). Dikkatli olun - yanlýþ kullanýlýrsa, 
+bu kodunuzu kilitleyebilir (ve bazen Ýþleme ortamýnýn kendisi bile).
+
+
+while (expression) {
+  statements
+}
+
+expression: geçerli bir ifade
+
+statements: bir veya daha fazla ifade
+
+
+
+Bütün Döngüyü Tek Kodda Toplama
+
+
+
+for (int i = 0; i < 40; i = i+1) {
+  line(30, i, 80, i);
+}
+
+
+Bir tekrar dizisini kontrol eder. Temel bir yapý üç bölümden oluþur: init, test ve güncelleme. Her parça bir noktalý virgülle (;) ayrýlmalýdýr. 
+Döngü, test yanlýþ olarak deðerlendirilinceye kadar devam eder. Bir yapý yürütüldüðünde, aþaðýdaki olaylar dizisi gerçekleþir:
+
+1. Init ifadesi çalýþtýrýldý.
+2. Test doðru ya da yanlýþ olarak deðerlendirilir.
+3. Test doðruysa, 4. adýma geçin. Test yanlýþsa, 6. adýma geçin.
+4. Ýfadeleri blokta çalýþtýrýn.
+5. Güncelleme deyimini çalýþtýrýn ve adým 2'ye geçin.
+6. Döngüden çýkýn.
+
+Yukarýdaki ilk örnekte, yapý için 40 kez yürütülür. Init ifadesinde, i deðeri oluþturulur ve sýfýra ayarlanýr. 
+i 40'ýn altýndadýr, bu yüzden test doðru olarak deðerlendirilir. Her döngünün sonunda, bir tarafýndan artýrýlýr.
+ 41. yürütmede, test yanlýþ olarak deðerlendirilir, çünkü o zaman 40'a eþittir, bu yüzden <40 artýk doðru deðildir. Böylece döngü çýkar.
+
+Ýkinci bir yapý türü, bir dizinin her bir öðesi üzerinde yineleme yapmayý kolaylaþtýrýr. Yukarýdaki son örnek, nasýl çalýþtýðýný gösterir. 
+Parantez içinde, önce dizinin veri türünü tanýmlayýn, sonra bir deðiþken adý tanýmlayýn. 
+Bu deðiþken adý, dizinin her bir öðesi için, sýrasýyla tüm dizi boyunca hareket ettikçe atanacaktýr. Son olarak, kolondan sonra kullanýlacak dizi adýný tanýmlayýn
+
+
+for (init; test; update) { 
+  statements
+} 
+
+for (datatype element : array) { 
+  statements
+}
+
+
+	
+init: Döngü baþlangýcý olduðunda bir kez yürütülen ifade
+
+test: Test doðru olarak deðerlendirirse, ifadeler yürütülür
+
+update: her yinelemenin sonunda yürütülür
+
+statements: döngü boyunca her defasýnda yürütülen ifadelerin toplanmasý
+
+datatype: dizideki öðelerin veri türü
+
+element: dizinin her öðesi için kullanýlacak geçici ad
+
+array: boyunca yinelemek için dizinin adý
+
+
+Koda Gecikme Verme
+
+
+import processing.serial.*;
+
+Serial myPort;  // The serial port
+
+void setup() {
+  printArray(Serial.list());
+  myPort = new Serial(this, Serial.list()[0], 9600);
+}
+
+void draw() {
+  while (myPort.available() > 0) {
+    int inByte = myPort.read();
+    println(inByte);
+  }
+  delay(100);
+}
+
+
+Delay () iþlevi belirtilen bir süre için durur. Gecikme süreleri saniyenin binde biri olarak belirtilir. 
+Örneðin, çalýþma gecikmesi (3000) programý üç saniye durdurur ve gecikme (500) programý yarým saniyeliðine durdurur.
+
+Ekran sadece draw () 'nin sonuna gelindiðinde güncellenir, böylece çizimin yavaþlatýlmasý için delay () kullanýlamaz. 
+Örneðin, bir animasyonun zamanlamasýný kontrol etmek için delay () kullanamazsýnýz.
+
+Delay () iþlevi sadece komut dosyalarýný duraklatmak için kullanýlmalýdýr 
+(yani, bir indirme denemeden önce birkaç saniye duraklatmasý gereken bir betik veya seri baðlantý noktasýndan okumadan önce birkaç milisaniye beklemesi gereken bir çizim).
+
+
+delay(napTime) 	
+
+napTime: tekrar çalýþtýrmadan önce duraklatmak için milisaniye
+
+
+
+

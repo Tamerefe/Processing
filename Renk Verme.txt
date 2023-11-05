@@ -1,0 +1,131 @@
+RGB Nedir;
+
+Red =
+Green =   COLOR
+Blue =
+
+Yani Bir Renk Verirken
+
+Fill(___,___,___)
+    
+    Red,Green,Blue
+
+Þeklinde Veririz
+
+Renkler 0-255 arasýndadýr
+
+
+Bir Objenin Ýçini Boyamak Ýçin;
+
+fill(rgb)                / fill(153);
+fill(rgb, alpha)         / fill(153, 23);
+fill(gray)
+fill(gray, alpha)
+fill(v1, v2, v3)         / fill(204, 102, 0);
+fill(v1, v2, v3, alpha)  / fill(204, 102, 0, 145);
+
+
+
+rgb  : renk deðiþkeni veya onaltýlýk deðer
+Alfa : dolgu opaklýðý
+gri  : beyaz ve siyah arasýnda deðer belirten sayý
+v1   : kýrmýzý veya ton deðeri (mevcut renk moduna baðlý olarak)
+v2   : yeþil veya doygunluk deðeri (mevcut renk moduna baðlý olarak)
+v3   : mavi veya parlaklýk deðeri (geçerli renk moduna baðlý olarak)
+
+Bir Objenin Dýþýný Boyamak Ýçin;
+
+stroke(rgb)                / stroke(153);
+stroke(rgb, alpha)         / stroke(153, 23);
+stroke(gray)
+stroke(gray, alpha)
+stroke(v1, v2, v3)         / stroke(204, 102, 0);
+stroke(v1, v2, v3, alpha)  / stroke(204, 102, 0, 124);
+
+
+rgb  : onaltýlýk gösterimde renk deðeri
+alfa : inmenin opaklýðý
+gri  : beyaz ve siyah arasýnda bir deðer belirtir
+v1   : kýrmýzý veya ton deðeri (mevcut renk moduna baðlý olarak)
+v2   : yeþil veya doygunluk deðeri (mevcut renk moduna baðlý olarak)
+v3   : mavi veya parlaklýk deðeri (geçerli renk moduna baðlý olarak)
+ 
+Not: Bir objeyi boyarken komut satýrýnýn þöyle olmasý gerekmektedir
+
+stroke(153);
+rect(30, 20, 55, 55);
+
+stroke(153);
+fill(204, 102, 0);
+rect(30, 20, 55, 55);
+
+
+Bir Objenin Kenarýný Ve Ýçini Boyamak;
+
+stroke(rgb);
+fill(rgb);
+
+
+Arkaplan Rengini Ayarlamak;
+
+	
+
+background(rgb)                / background(51);
+background(rgb, alpha)
+background(gray)
+background(gray, alpha) 
+background(v1, v2, v3)         / background(255, 204, 0);
+background(v1, v2, v3, alpha)
+background(image)
+
+
+rgb   : renk veri türünün herhangi bir deðeri
+alpha : arka planýn opaklýðý
+gri   : beyaz ve siyah arasýnda bir deðer belirtir
+v1    : kýrmýzý veya ton deðeri (geçerli renk moduna baðlý olarak)
+v2    : yeþil veya doygunluk deðeri (geçerli renk moduna baðlý olarak)
+v3    : mavi veya parlaklýk deðeri (geçerli renk moduna baðlý olarak)
+image : Arka plan olarak ayarlamak için PImage (çizim penceresiyle ayný boyutta olmalýdýr)
+
+
+Not: Arkaplaný En Sona Koyarsanýz En Son Onu Cizeceði Ýçin Bütün Objeleri Siler!
+
+
+Ton Doygunluk Parlaklýk Ayarý;
+
+	
+
+colorMode(mode)
+colorMode(mode, max)
+colorMode(mode, max1, max2, max3)
+colorMode(mode, max1, max2, max3, maxA)
+
+
+modu : Kýrmýzý / Yeþil / Mavi ve Ton / Doygunluk / Parlaklýða karþýlýk gelen RGB veya HSB
+max  : tüm renk elemanlarý için aralýk
+max1 : mevcut renk moduna baðlý olarak kýrmýzý veya ton aralýðý
+max2 : geçerli renk moduna baðlý olarak yeþil veya doygunluk aralýðý
+max3 : mevcut renk moduna baðlý olarak mavi veya parlaklýk aralýðý
+maxA : alfa için aralýk
+
+
+Örnk
+
+noStroke();
+colorMode(RGB, 100);
+for (int i = 0; i < 100; i++) {
+  for (int j = 0; j < 100; j++) {
+    stroke(i, j, 0);
+    point(i, j);
+  }
+}
+
+noStroke();
+colorMode(HSB, 100);
+for (int i = 0; i < 100; i++) {
+  for (int j = 0; j < 100; j++) {
+    stroke(i, j, 100);
+    point(i, j);
+  }
+}
+

@@ -1,0 +1,245 @@
+Koda Bir Komut Atama
+
+
+	
+int a;          // Declare variable 'a' of type int
+a = 23;         // Assign 'a' the value 23
+int b = -256;   // Declare variable 'b' and assign it the value -256
+int c = a + b;  // Declare variable 'c' and assign it the sum of 'a' and 'b'
+
+
+
+
+Tamsayýlar için veri türü, ondalýk iþareti olmayan sayýlar.
+Tamsayýlar 2,147,483,647 ve -2,147,483,648 kadar düþük olabilir.
+32 bit bilgi olarak saklanýrlar. Bir deðiþken ilk yazýldýðý zaman, veri türünü ifade eden bir ifade ile bildirilmelidir.
+Bu deðiþkenin sonraki kullanýmlarý veri türünü referans göstermemelidir çünkü Ýþleme, deðiþkenin tekrar beyan edildiðini düþünecektir.
+
+var deðere referans veren deðiþken ad
+
+value herhangi bir tam sayý
+
+Not int nin önüne istediðin bir deðeri verdikten sonra ayný iþlemi draw veya starta yapýp sonra en son kullanmak istediðin þeyi yapabilirsin
+
+
+Bir Cismi X Konumunda 1 Birim Haraket Ettirme
+
+CircleX CircleY gibi Ýsimler Olabilir
+
+int CircleX;
+void setup() {
+size(640,360);
+}
+void draw() {
+  background(50);
+  CircleX = CircleX + 1;
+
+  
+ fill(255);
+ ellipse(CircleX,180,24,24);
+
+Not:Sað Doðru Haraket Ýçin +1 Sola Doðru Haraket Ýçin -1
+Not1:Hýzý Artýrmak Ýstersen Deðiþkendeki 1 Ý Deðiþtir
+Not2:Bir Yöne Carpýnca Geri Dönmesi Ýçin 
+
+float circleX;
+float xspeed = 10;
+circleX = circleX + xspeed;
+if(circleX > width || circleX <0) {
+  xspeed = xspeed * -1;
+
+
+Bir Cismi Y Konumunda 1 Birim Haraket Ettirme
+
+int CircleY;
+void setup() {
+size(640,360);
+}
+void draw() {
+  background(50);
+  CircleY = CircleY + 1;
+
+fill(255);
+ ellipse(10,CircleY,24,24);
+
+Not:Aþagý Doðru Haraket Ýçin +1 Yukarý Dogru Ýçin -1
+Not1:Hýzý Artýrmak Ýstersen Deðiþkendeki 1 Ý Deðiþtir
+
+
+Kodu Tamsayýdan Ondalýk Kesiye Dönüþtürme
+
+	
+
+float a;           // Declare variable 'a' of type float
+a = 1.5387;        // Assign 'a' the value 1.5387
+float b = -2.984;  // Declare variable 'b' and assign it the value -2.984
+float c = a + b;   // Declare variable 'c' and assign it the sum of 'a' and 'b'
+
+
+Kayan noktalý sayýlar için veri türü, ör. ondalýk noktasý olan sayýlar.
+
+Þamandýralar hassas deðildir, bu nedenle küçük deðerler (0.0001 gibi) eklemek yuvarlama hatalarý nedeniyle her zaman tam olarak artmayabilir.
+ Bir deðeri küçük aralýklarla artýrmak istiyorsanýz, bir int kullanýn ve kullanmadan önce bir float deðerine bölün. (Yukarýdaki ikinci örneðe bakýn.)
+
+Kayan noktalý sayýlar, 3.40282347E + 38 ve -3.40282347E + 38 kadar düþük olabilir. Bunlar 32 bit (4 bayt) bilgi olarak saklanýr.
+ Kayan veri türü Java'dan miras alýnýr; Teknik detaylar hakkýnda buradan ve buradan daha fazla bilgi edinebilirsiniz.
+
+Ýþleme, Java'dan da çift veri türünü destekler. 
+Ancak, Ýþleme iþlevlerinden hiçbiri daha fazla bellek kullanan ve Ýþleme'de oluþturulan çoðu çalýþma için genellikle aþýrý sýklýkta olan çifte deðerleri kullanýr.
+ Çift iþlevli deðerler için destek eklememekteyiz, bu sayede API iþlevlerinin sayýsýnýn önemli ölçüde artýrýlmasýný gerektirecektir.
+
+	
+float var
+float var = value
+
+
+
+
+var: float referanslý deðiþken isim
+value: herhangi bir kayan nokta deðeri
+
+Kodlamnada Rasgele Deðiþken 
+
+	
+
+for (int i = 0; i < 100; i++) {
+  float r = random(50);
+  stroke(r*5);
+  line(50, i, 50+r, i);
+}
+
+
+
+Rastgele sayýlar üretir. Her rastgele () iþlevi çaðrýldýðýnda, belirtilen aralýk içinde beklenmedik bir deðer döndürür. 
+Fonksiyona sadece bir parametre iletilirse, sýfýr ile yüksek parametrenin deðeri arasýnda bir kayan döndürecektir. 
+Örneðin, rastgele (5) 0 ile 5 arasýnda bir deðer döndürür (sýfýrdan baþlayarak en çok 5 dahil olmak üzere).
+
+Ýki parametre belirtilirse, iþlev iki deðer arasýnda bir deðerle bir kayan döndürür.
+ Örneðin, rasgele (-5, 10.2) -5 ile baþlayan ve (ancak dahil deðil) 10.2'den baþlayan deðerler döndürür. 
+Kayan noktalý rasgele bir sayýyý tamsayýya dönüþtürmek için int () iþlevini kullanýn.
+
+
+low: Alt Limit
+High: Üst Limit
+
+
+Bir Koþul Belirleme
+
+for (int i = 5; i < height; i += 5) {
+  stroke(255);   // Set the color to white
+  if (i < 35) {  // When 'i' is less than 35...
+    stroke(0);   //...set the color to black
+  }
+  line(30, i, 80, i);
+}
+
+Programýn hangi kodun yürütüleceðine karar vermesine izin verir. 
+Test doðru olarak deðerlendirilirse, blok içinde yer alan ifadeler yürütülür ve test yanlýþ olarak deðerlendirilirse ifadeler yürütülür.
+
+if (test) { 
+  statements 
+} 
+
+	
+test:        Doðru veya yanlýþ olarak deðerlendiren geçerli herhangi bir ifade
+statements:  idam edilecek bir veya daha fazla ifade
+
+
+Secim Yapma Komutu
+
+for (int i = 5; i < 95; i += 5) {
+  if (i < 35) {
+    line(30, i, 80, i);
+  } else {
+    line(20, i, 90, i);
+  }
+}
+
+Yapý, programýn iki veya daha fazla kod bloðu arasýnda seçim yapmasýna izin verirse geniþletir.
+ If if ifadesi false olduðunda yürütmek için bir kod bloðunu belirtir.
+
+	
+expression: Doðru veya yanlýþ olarak deðerlendiren geçerli herhangi bir ifade
+
+statements: idam edilecek bir veya daha fazla ifade
+
+Doðru Yada Yanlýþý Ayarlama
+
+boolean a = false; 
+if (!a) { 
+  rect(30, 20, 50, 50); 
+} 
+a = true; 
+if (a) { 
+  line(20, 10, 90, 80); 
+  line(20, 80, 90, 10); 
+} 
+
+
+Boolean deðerleri için veri türü true ve false. 
+Bir programýn akýþýný belirlemek için kontrol ifadeleriyle boole deðerlerinin kullanýlmasý yaygýndýr. 
+Bir deðiþken ilk yazýldýðý zaman, veri türünü ifade eden bir ifade ile bildirilmelidir.
+
+boolean var
+boolean var = booleanvalue
+
+	
+var: deðere referans veren deðiþken ad
+boolean: doðru ya da yanlýþ
+
+Not: Fareyi Týklatýgýnda Calýþtýrýp Durdurma Komutu
+
+boolean going;
+ 
+void mousePressed() {
+ going=!going;
+
+}
+
+Class
+
+
+void setup() 
+{
+  size(200, 200);
+  frameRate(30);
+}
+
+void draw() { 
+  background(204);
+  h1.update(); 
+  h2.update();  
+} 
+ 
+class HLine { 
+  float ypos, speed; 
+  HLine (float y, float s) {  
+    ypos = y; 
+    speed = s; 
+  } 
+  void update() { 
+    ypos += speed; 
+    if (ypos > height) { 
+      ypos = 0; 
+    } 
+    line(0, ypos, width, ypos); 
+  } 
+} 
+
+
+Anahtar kelime, bir sýnýfýn bildirimini belirtmek için kullanýlýr. 
+Sýnýf, nesneler olarak baþlatýlabilen alanlarýn (veri) ve yöntemlerin (sýnýfýn bir parçasý olan iþlevlerin) bir bileþimidir. 
+Bir sýnýf isminin ilk harfi genellikle diðer deðiþkenlerden ayýrmak için büyük harftir. Nesne Tabanlý Programlama ile ilgili bir öðretici, Oracle web sitesinde barýndýrýlmaktadýr.
+
+
+	
+
+class ClassName {
+  statements
+}
+
+
+ClassName : Herhangi bir geçerli deðiþken adý
+
+statements : geçerli ifadeler
+

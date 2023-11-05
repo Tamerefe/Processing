@@ -1,0 +1,51 @@
+class Particle {
+  float x, y;
+  float r;
+  
+  Particle() {
+    x =random(width);
+    y =random(height);
+    r =random(4,18);
+  }
+  
+  Particle(float tempX,float tempY,float tempR){
+  
+  x = tempX;
+  y = tempY;
+  r = tempR;
+  
+}
+
+//Bu Þekildede Olur
+ boolean overlaps(Particle other) {
+    float d = dist(x,y,other.x,other.y);
+    if (d < r + other.r) {
+     return true;
+      } else {
+       return false;
+     
+}
+}
+
+void display() {
+  stroke(255);
+  strokeWeight(4);
+  fill(255);
+  ellipse(x,y,r*3,r*3);
+}
+
+void diisplay() {
+  stroke(0);
+  strokeWeight(5);
+  fill(255,255,0);
+  ellipse(x,y,r*3,r*3);
+}
+
+
+    void dissplay() {
+  stroke(0);
+  strokeWeight(4);
+  fill(0);
+  rect(x,y,r,r);
+  }
+  }
