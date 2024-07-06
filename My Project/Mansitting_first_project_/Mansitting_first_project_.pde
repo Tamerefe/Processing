@@ -1,7 +1,7 @@
 size(640,360); 
 
 
-//Sağ Kol
+//SaÄŸ Kol
 line(145, 130, 185, 155);
 line(145, 130, 186, 156);
 line(145, 130, 187, 157);
@@ -9,7 +9,7 @@ line(145, 130, 188, 158);
 line(145, 130, 189, 159);
 line(145, 130, 190, 160);
 
-//Gövde
+//GÃ¶vde
 stroke (0);
 fill(255, 239, 213);
 rect(93, 94, 55, 105);
@@ -20,7 +20,7 @@ rect(125,192,82,7);
 //Kafa
 ellipse(120, 70, 70, 70);
 
-//Sağ Göz
+//SaÄŸ GÃ¶z
 stroke (0);
 fill(0);
 ellipse(140, 70, 12, 20);
@@ -33,12 +33,12 @@ line(95, 130, 187, 167);
 line(95, 130, 188, 168);
 line(95, 130, 189, 169);
 
-//Koltuk Arkası
+//Koltuk ArkasÄ±
 stroke(255,255,0);
 fill(0);
 rect(70,95,18,110);
 
-//Koltuk Kenarları
+//Koltuk KenarlarÄ±
 stroke(255,255,0);
 fill(0);
 rect(91,184,78,15);
@@ -48,22 +48,22 @@ stroke(0);
 fill(0);
 rect(117,150,15,40);
 
-//Koltuk Dayama Yeri Uzantısı
+//Koltuk Dayama Yeri UzantÄ±sÄ±
 stroke(0);
 fill(0);
 rect(105,149,41,8);
 
-//Koltuk Dayama Yeri Kaldırıp İndirme
+//Koltuk Dayama Yeri KaldÄ±rÄ±p Ä°ndirme
 stroke(255,255,0);
 fill(0);
 rect(116,158,16,8);
 
-//Koltuk Altı
+//Koltuk AltÄ±
 stroke(255,255,0);
 fill(0);
 rect(70,200,110,10);
 
-//Koltuk Ayagı
+//Koltuk AyagÄ±
 line(125, 210, 125, 270);
 line(124, 210, 124, 270);
 line(126, 210, 126, 270);
@@ -71,8 +71,8 @@ line(127, 210, 127, 270);
 line(123, 210, 123, 270);
 rect(115, 200, 20, 30);
 
-//Koltuk Ayakları
-//Sağ Aşagı/Sol Yukarı 3/3
+//Koltuk AyaklarÄ±
+//SaÄŸ AÅŸagÄ±/Sol YukarÄ± 3/3
 stroke (255,255,0);
 fill(255,255,0);
 line(125, 271, 190, 300);
@@ -88,8 +88,8 @@ fill(0);
 ellipse(190, 300, 16, 16);
 ellipse(60, 241, 16, 16);
 
-//Koltuk Ayakları
-//Sağ Yukarı/Sol Aşagı/Aşağı 3/3 Son Kısım 3/2
+//Koltuk AyaklarÄ±
+//SaÄŸ YukarÄ±/Sol AÅŸagÄ±/AÅŸaÄŸÄ± 3/3 Son KÄ±sÄ±m 3/2
 stroke (255,255,0);
 fill(255,255,0);
 line(125, 271, 60, 300);
@@ -112,12 +112,3 @@ ellipse(60, 300, 16, 16);
 
 //Aradaki Cizgi
 rect(250,1,5,1000);
-
-
-
-
-
-
-
-
-

@@ -25,15 +25,15 @@ void draw() {
  ellipse(circleX,180,25,25);
  
  
- //Sanş Faktörü
+ //SanÅŸ FaktÃ¶rÃ¼
  circleX = circleX + random(-20,+20);
  
- //Yazı Mesajı
+ //YazÄ± MesajÄ±
  if(circleX > 620) {
- println("Mavi Kazandı");
+ println("Mavi KazandÄ±");
 }
 if(circleX < 20) {
- println("Yeşil Kazandı");
+ println("YeÅŸil KazandÄ±");
 }
 
 }

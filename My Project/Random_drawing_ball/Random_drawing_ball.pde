@@ -9,26 +9,23 @@ void setup () {
 }
 
 void draw() {
-  TopunDurumu();
-  TopunHareketi();
-  EkranaCarpma();
+  ballCondition();
+  movementBall();
+  hittingScreen();
 }
 
-void TopunDurumu() {
+void ballCondition() {
   stroke(random(255),random(255),random(255));
   fill(random(255),random(255),random(255));
   ellipse(x,y,32,32);
 }
 
-void TopunHareketi() {
-  
+void movementBall() {
   x = x + xspeed;
   y = y + yspeed;
-  
-  
 }
 
-void EkranaCarpma() {
+void hittingScreen() {
    
   if(x > width || x < 0) {
     xspeed = xspeed * -1;
@@ -38,5 +35,4 @@ void EkranaCarpma() {
     yspeed = yspeed * -1;
     
   }
-  
 }
