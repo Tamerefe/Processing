@@ -1,0 +1,135 @@
+RGB Nedir;
+
+Red =
+Green =   COLOR
+Blue =
+
+Yani Bir Renk Verirken
+
+Fill(___,___,___)
+    
+    Red,Green,Blue
+
+�eklinde Veririz
+
+Renkler 0-255 aras�ndad�r
+
+
+Bir Objenin ��ini Boyamak ��in;
+
+fill(rgb)                / fill(153);
+fill(rgb, alpha)         / fill(153, 23);
+fill(gray)
+fill(gray, alpha)
+fill(v1, v2, v3)         / fill(204, 102, 0);
+fill(v1, v2, v3, alpha)  / fill(204, 102, 0, 145);
+
+
+
+rgb  : renk de�i�keni veya onalt�l�k de�er
+Alfa : dolgu opakl���
+gri  : beyaz ve siyah aras�nda de�er belirten say�
+v1   : k�rm�z� veya ton de�eri (mevcut renk moduna ba�l� olarak)
+v2   : ye�il veya doygunluk de�eri (mevcut renk moduna ba�l� olarak)
+v3   : mavi veya parlakl�k de�eri (ge�erli renk moduna ba�l� olarak)
+
+Bir Objenin D���n� Boyamak ��in;
+
+stroke(rgb)                / stroke(153);
+stroke(rgb, alpha)         / stroke(153, 23);
+stroke(gray)
+stroke(gray, alpha)
+stroke(v1, v2, v3)         / stroke(204, 102, 0);
+stroke(v1, v2, v3, alpha)  / stroke(204, 102, 0, 124);
+
+
+rgb  : onalt�l�k g�sterimde renk de�eri
+alfa : inmenin opakl���
+gri  : beyaz ve siyah aras�nda bir de�er belirtir
+v1   : k�rm�z� veya ton de�eri (mevcut renk moduna ba�l� olarak)
+v2   : ye�il veya doygunluk de�eri (mevcut renk moduna ba�l� olarak)
+v3   : mavi veya parlakl�k de�eri (ge�erli renk moduna ba�l� olarak)
+ 
+Not: Bir objeyi boyarken komut sat�r�n�n ��yle olmas� gerekmektedir
+
+stroke(153);
+rect(30, 20, 55, 55);
+
+stroke(153);
+fill(204, 102, 0);
+rect(30, 20, 55, 55);
+
+
+Bir Objenin Kenar�n� Ve ��ini Boyamak;
+
+stroke(rgb);
+fill(rgb);
+
+
+Arkaplan Rengini Ayarlamak;
+
+	
+
+background(rgb)                / background(51);
+background(rgb, alpha)
+background(gray)
+background(gray, alpha) 
+background(v1, v2, v3)         / background(255, 204, 0);
+background(v1, v2, v3, alpha)
+background(image)
+
+
+rgb   : renk veri t�r�n�n herhangi bir de�eri
+alpha : arka plan�n opakl���
+gri   : beyaz ve siyah aras�nda bir de�er belirtir
+v1    : k�rm�z� veya ton de�eri (ge�erli renk moduna ba�l� olarak)
+v2    : ye�il veya doygunluk de�eri (ge�erli renk moduna ba�l� olarak)
+v3    : mavi veya parlakl�k de�eri (ge�erli renk moduna ba�l� olarak)
+image : Arka plan olarak ayarlamak i�in PImage (�izim penceresiyle ayn� boyutta olmal�d�r)
+
+
+Not: Arkaplan� En Sona Koyarsan�z En Son Onu Cizece�i ��in B�t�n Objeleri Siler!
+
+
+Ton Doygunluk Parlakl�k Ayar�;
+
+	
+
+colorMode(mode)
+colorMode(mode, max)
+colorMode(mode, max1, max2, max3)
+colorMode(mode, max1, max2, max3, maxA)
+
+
+modu : K�rm�z� / Ye�il / Mavi ve Ton / Doygunluk / Parlakl��a kar��l�k gelen RGB veya HSB
+max  : t�m renk elemanlar� i�in aral�k
+max1 : mevcut renk moduna ba�l� olarak k�rm�z� veya ton aral���
+max2 : ge�erli renk moduna ba�l� olarak ye�il veya doygunluk aral���
+max3 : mevcut renk moduna ba�l� olarak mavi veya parlakl�k aral���
+maxA : alfa i�in aral�k
+
+
+Ornk
+
+noStroke();
+colorMode(RGB, 100);
+for (int i = 0; i < 100; i++) {
+  for (int j = 0; j < 100; j++) {
+    stroke(i, j, 0);
+    point(i, j);
+  }
+}
+
+noStroke();
+colorMode(HSB, 100);
+for (int i = 0; i < 100; i++) {
+  for (int j = 0; j < 100; j++) {
+    stroke(i, j, 100);
+    point(i, j);
+  }
+}
+
+Random Renk Komutu
+
+stroke(random(255),random(255),random(255));
+fill(random(255),random(255),random(255));

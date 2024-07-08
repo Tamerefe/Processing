@@ -1,0 +1,257 @@
+Olu�acak Pencerenin Boyunu Ayarlama Komutu:
+
+size(?,?); / size(640,360); 
+
+Koda Bir Komut Atama
+	
+int a;          // Declare variable 'a' of type int
+a = 23;         // Assign 'a' the value 23
+int b = -256;   // Declare variable 'b' and assign it the value -256
+int c = a + b;  // Declare variable 'c' and assign it the sum of 'a' and 'b'
+
+Tamsay�lar i�in veri t�r�, ondal�k i�areti olmayan say�lar.
+Tamsay�lar 2,147,483,647 ve -2,147,483,648 kadar d���k olabilir.
+32 bit bilgi olarak saklan�rlar. Bir de�i�ken ilk yaz�ld��� zaman, veri t�r�n� ifade eden bir ifade ile bildirilmelidir.
+Bu de�i�kenin sonraki kullan�mlar� veri t�r�n� referans g�stermemelidir ��nk� ��leme, de�i�kenin tekrar beyan edildi�ini d���necektir.
+
+var de�ere referans veren de�i�ken ad
+
+value herhangi bir tam say�
+
+Not int nin �n�ne istedi�in bir de�eri verdikten sonra ayn� i�lemi draw veya starta yap�p sonra en son kullanmak istedi�in �eyi yapabilirsin
+
+Koda Bir Ba�l�k Ekleme 
+
+//_______     /  //Bu Sat�r Olmam��
+
+
+Kodda Bir Komutu �zleme
+
+println() / println(circleX)
+
+Yanl�� = Not
+
+! harfi Yanl�� D�r
+
+
+Bir Cismi X Konumunda 1 Birim Haraket Ettirme
+
+CircleX CircleY gibi �simler Olabilir
+
+int CircleX;
+void setup() {
+size(640,360);
+}
+void draw() {
+  background(50);
+  CircleX = CircleX + 1;
+
+  
+ fill(255);
+ ellipse(CircleX,180,24,24);
+
+Not:Sa� Do�ru Haraket ��in +1 Sola Do�ru Haraket ��in -1
+Not1:H�z� Art�rmak �stersen De�i�kendeki 1 � De�i�tir
+Not2:Bir Y�ne Carp�nca Geri D�nmesi ��in 
+
+float circleX;
+float xspeed = 10;
+circleX = circleX + xspeed;
+if(circleX > width || circleX <0) {
+  xspeed = xspeed * -1;
+
+
+Bir Cismi Y Konumunda 1 Birim Haraket Ettirme
+
+int CircleY;
+void setup() {
+size(640,360);
+}
+void draw() {
+  background(50);
+  CircleY = CircleY + 1;
+
+fill(255);
+ ellipse(10,CircleY,24,24);
+
+Not:A�ag� Do�ru Haraket ��in +1 Yukar� Dogru ��in -1
+Not1:H�z� Art�rmak �stersen De�i�kendeki 1 � De�i�tir
+
+
+Kodu Tamsay�dan Ondal�k Kesiye D�n��t�rme
+
+	
+
+float a;           // Declare variable 'a' of type float
+a = 1.5387;        // Assign 'a' the value 1.5387
+float b = -2.984;  // Declare variable 'b' and assign it the value -2.984
+float c = a + b;   // Declare variable 'c' and assign it the sum of 'a' and 'b'
+
+
+Kayan noktal� say�lar i�in veri t�r�, �r. ondal�k noktas� olan say�lar.
+
+�amand�ralar hassas de�ildir, bu nedenle k���k de�erler (0.0001 gibi) eklemek yuvarlama hatalar� nedeniyle her zaman tam olarak artmayabilir.
+ Bir de�eri k���k aral�klarla art�rmak istiyorsan�z, bir int kullan�n ve kullanmadan �nce bir float de�erine b�l�n. (Yukar�daki ikinci �rne�e bak�n.)
+
+Kayan noktal� say�lar, 3.40282347E + 38 ve -3.40282347E + 38 kadar d���k olabilir. Bunlar 32 bit (4 bayt) bilgi olarak saklan�r.
+ Kayan veri t�r� Java'dan miras al�n�r; Teknik detaylar hakk�nda buradan ve buradan daha fazla bilgi edinebilirsiniz.
+
+��leme, Java'dan da �ift veri t�r�n� destekler. 
+Ancak, ��leme i�levlerinden hi�biri daha fazla bellek kullanan ve ��leme'de olu�turulan �o�u �al��ma i�in genellikle a��r� s�kl�kta olan �ifte de�erleri kullan�r.
+ �ift i�levli de�erler i�in destek eklememekteyiz, bu sayede API i�levlerinin say�s�n�n �nemli �l��de art�r�lmas�n� gerektirecektir.
+
+	
+float var
+float var = value
+
+
+
+
+var: float referansl� de�i�ken isim
+value: herhangi bir kayan nokta de�eri
+
+Kodlamnada Rasgele De�i�ken 
+
+	
+
+for (int i = 0; i < 100; i++) {
+  float r = random(50);
+  stroke(r*5);
+  line(50, i, 50+r, i);
+}
+
+
+
+Rastgele say�lar �retir. Her rastgele () i�levi �a�r�ld���nda, belirtilen aral�k i�inde beklenmedik bir de�er d�nd�r�r. 
+Fonksiyona sadece bir parametre iletilirse, s�f�r ile y�ksek parametrenin de�eri aras�nda bir kayan d�nd�recektir. 
+�rne�in, rastgele (5) 0 ile 5 aras�nda bir de�er d�nd�r�r (s�f�rdan ba�layarak en �ok 5 dahil olmak �zere).
+
+�ki parametre belirtilirse, i�lev iki de�er aras�nda bir de�erle bir kayan d�nd�r�r.
+ �rne�in, rasgele (-5, 10.2) -5 ile ba�layan ve (ancak dahil de�il) 10.2'den ba�layan de�erler d�nd�r�r. 
+Kayan noktal� rasgele bir say�y� tamsay�ya d�n��t�rmek i�in int () i�levini kullan�n.
+
+
+low: Alt Limit
+High: �st Limit
+
+
+Bir Ko�ul Belirleme
+
+for (int i = 5; i < height; i += 5) {
+  stroke(255);   // Set the color to white
+  if (i < 35) {  // When 'i' is less than 35...
+    stroke(0);   //...set the color to black
+  }
+  line(30, i, 80, i);
+}
+
+Program�n hangi kodun y�r�t�lece�ine karar vermesine izin verir. 
+Test do�ru olarak de�erlendirilirse, blok i�inde yer alan ifadeler y�r�t�l�r ve test yanl�� olarak de�erlendirilirse ifadeler y�r�t�l�r.
+
+if (test) { 
+  statements 
+} 
+
+	
+test:        Do�ru veya yanl�� olarak de�erlendiren ge�erli herhangi bir ifade
+statements:  idam edilecek bir veya daha fazla ifade
+
+
+Secim Yapma Komutu
+
+for (int i = 5; i < 95; i += 5) {
+  if (i < 35) {
+    line(30, i, 80, i);
+  } else {
+    line(20, i, 90, i);
+  }
+}
+
+Yap�, program�n iki veya daha fazla kod blo�u aras�nda se�im yapmas�na izin verirse geni�letir.
+ If if ifadesi false oldu�unda y�r�tmek i�in bir kod blo�unu belirtir.
+
+	
+expression: Do�ru veya yanl�� olarak de�erlendiren ge�erli herhangi bir ifade
+
+statements: idam edilecek bir veya daha fazla ifade
+
+Do�ru Yada Yanl��� Ayarlama
+
+boolean a = false; 
+if (!a) { 
+  rect(30, 20, 50, 50); 
+} 
+a = true; 
+if (a) { 
+  line(20, 10, 90, 80); 
+  line(20, 80, 90, 10); 
+} 
+
+
+Boolean de�erleri i�in veri t�r� true ve false. 
+Bir program�n ak���n� belirlemek i�in kontrol ifadeleriyle boole de�erlerinin kullan�lmas� yayg�nd�r. 
+Bir de�i�ken ilk yaz�ld��� zaman, veri t�r�n� ifade eden bir ifade ile bildirilmelidir.
+
+boolean var
+boolean var = booleanvalue
+
+	
+var: de�ere referans veren de�i�ken ad
+boolean: do�ru ya da yanl��
+
+Not: Fareyi T�klat�g�nda Cal��t�r�p Durdurma Komutu
+
+boolean going;
+ 
+void mousePressed() {
+ going=!going;
+
+}
+
+Class
+
+
+void setup() 
+{
+  size(200, 200);
+  frameRate(30);
+}
+
+void draw() { 
+  background(204);
+  h1.update(); 
+  h2.update();  
+} 
+ 
+class HLine { 
+  float ypos, speed; 
+  HLine (float y, float s) {  
+    ypos = y; 
+    speed = s; 
+  } 
+  void update() { 
+    ypos += speed; 
+    if (ypos > height) { 
+      ypos = 0; 
+    } 
+    line(0, ypos, width, ypos); 
+  } 
+} 
+
+
+Anahtar kelime, bir s�n�f�n bildirimini belirtmek i�in kullan�l�r. 
+S�n�f, nesneler olarak ba�lat�labilen alanlar�n (veri) ve y�ntemlerin (s�n�f�n bir par�as� olan i�levlerin) bir bile�imidir. 
+Bir s�n�f isminin ilk harfi genellikle di�er de�i�kenlerden ay�rmak i�in b�y�k harftir. Nesne Tabanl� Programlama ile ilgili bir ��retici, Oracle web sitesinde bar�nd�r�lmaktad�r.
+
+
+	
+
+class ClassName {
+  statements
+}
+
+
+ClassName : Herhangi bir ge�erli de�i�ken ad�
+
+statements : ge�erli ifadeler
+
